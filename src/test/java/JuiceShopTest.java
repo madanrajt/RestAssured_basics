@@ -7,7 +7,7 @@ public class JuiceShopTest {
 
     @Test
     public void newUserCreation(){
-        RestAssured.baseURI = "http://juice-shop:3000";
+        RestAssured.baseURI = System.getenv("JUICE_SHOP_URL");
         Response response = RestAssured
                 .given()
                 .header("Content-Type","application/json").
@@ -31,7 +31,7 @@ public class JuiceShopTest {
 
     @Test
     public void getAProduct(){
-        RestAssured.baseURI = "http://juice-shop:3000";
+        RestAssured.baseURI =  System.getenv("JUICE_SHOP_URL");
         Response response = RestAssured
                 .given()
                 .header("Content-Type","application/json")
